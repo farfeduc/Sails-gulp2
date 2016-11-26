@@ -1,0 +1,4 @@
+{
+  "proxy": "http://cesar.actimage.int:80",
+  "https-proxy": "http://cesar.actimage.int:80"
+}

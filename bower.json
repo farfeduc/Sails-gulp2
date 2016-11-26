@@ -1,0 +1,26 @@
+{
+  "name": "angular",
+  "authors": [
+    "Adrien Girardeau <adrien.girardeau@actimage.com>"
+  ],
+  "description": "Sails Gulp",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~1.3.3",
+    "angular-route": "~1.5.6",
+    "angular": "~1.5.6",
+    "angular-mocks": "~1.5.6",
+    "jquery": "~2.2.4",
+    "bootstrap": "^4.0.0",
+    "angular-ui-notification": "^0.2.0",
+    "font-awesome": "^4.6.3"
+  }
+}
