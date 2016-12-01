@@ -46,6 +46,11 @@ module.exports.routes = {
   	action: 'login'
   },
 
+  'POST /auth-local-assoc':{
+  	controller: 'auth',
+  	action: 'login_association'
+  },
+
   'GET /logout':{
   	controller: 'auth',
   	action: 'logout',

@@ -55,6 +55,31 @@ var verifyHandler = function(req ,mail, password, done) {
   });
 };
 
+var verifyHandlerAssoc = function(req ,mail, password, done) {
+  process.nextTick(function() {
+      Association.findOne({ name: mail }).exec(function(err, user) {
+        if (err || !user) {
+          return done(err);
+        }
+
+        bcrypt.compare(password, user.password, function(err, res) {
+          if (!res) {
+            return done(null, false, {message: 'Mot de passe incorrect'});
+          }
+
+          else {
+            /** The user's password is correct, so log them in. */
+            req.logIn(user, function(err) {
+              if (err) {
+                return done(null, false, {message: err});
+              }
+              return done(null, user, {message: 'Connecté avec succès'});
+            });
+          }
+        });
+      });
+  });
+};
 
 /** Register the LocalStrategy with Passport. */
 passport.use('local', new LocalStrategy({
@@ -63,6 +88,13 @@ passport.use('local', new LocalStrategy({
   passReqToCallback: true
 
 }, verifyHandler));
+
+passport.use('localassoc', new LocalStrategy({
+  usernameField: 'name',
+  passwordField: 'password',
+  passReqToCallback: true
+
+}, verifyHandlerAssoc));
 
 passport.use('facebook',new FacebookStrategy({
     clientID: "1025320690924678",

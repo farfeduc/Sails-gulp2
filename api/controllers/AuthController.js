@@ -27,7 +27,19 @@ module.exports = {
         })(req, res);
     },
 
-    //TODO : Login facebook
+    login_association: function(req, res) {
+        passport.authenticate('localassoc', function(err, user, info) {
+            //if ((err) || (!user)) {
+            //    return res.send(info);
+            //}
+            req.logIn(user, function(err) {
+                if (err) res.send(err);
+                return res.send({data:'ok'});
+            });
+
+        })(req, res);
+    },
+
     login_facebook: function(req,res){
     	passport.authenticate('facebook', function(err, user, info) {
             if ((err) || (!user)) {
