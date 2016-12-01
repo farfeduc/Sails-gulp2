@@ -108,7 +108,7 @@ module.exports.blueprints = {
   * PUT /foos/:id?                                                           
   * DELETE /foos/:id?                                                        
   */
-  /// pluralize: false,
+  pluralize: true,
 
   /**
   * Whether the blueprint controllers should populate model fetches with     

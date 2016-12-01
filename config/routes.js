@@ -34,6 +34,27 @@ module.exports.routes = {
 
   'get /': {
     view: 'home'
+  },
+
+  'POST /auth-facebook':{
+  	controller: 'auth',
+  	action:'login_facebook'
+  },
+
+  'POST /auth-local':{
+  	controller: 'auth',
+  	action: 'login'
+  },
+
+  'GET /logout':{
+  	controller: 'auth',
+  	action: 'logout',
+  	policy: 'IsAuthenticated'
+  },
+
+  '/facebook-callback':{
+  	controller: 'auth',
+  	action: 'facebook_callback'
   }
   
   /**
