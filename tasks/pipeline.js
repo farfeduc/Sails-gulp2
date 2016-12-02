@@ -13,38 +13,24 @@
 // CSS files to inject in order
 var cssFilesToInject = [
   //bower_components
-  'bower_components/nvd3/build/nv.d3.min.css',
   '/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css',
-  '/bower_components/bootstrap-daterangepicker/daterangepicker.css',
-  '/misc/images/atvImg.css',
+  '/bower_components/ng-dialog/css/ngDialog.min.css',
+  '/bower_components/ng-dialog/css/ngDialog-theme-default.css',
   'styles/**/*.css'
 ];
 
 
 // Client-side javascript files to inject in order
 var jsFilesToInject = [
-  'js/dependencies/latinize.js',
-  'js/dependencies/crypt.js',
-  'js/dependencies/crypto.js',
-  'js/dependencies/fingerprint2.min.js',
 
   //bower_components
   '/bower_components/jquery/dist/jquery.min.js',
   '/bower_components/angular/angular.min.js',
-  '/bower_components/moment/min/moment.min.js',
-  '/bower_components/bootstrap-daterangepicker/daterangepicker.js',
+  '/bower_components/angular-route/angular-route.min.js',
+  '/bower_components/ng-dialog/js/ngDialog.min.js',
   '/bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
-  '/bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js', //non-html5 browser support
-  '/bower_components/ng-file-upload/ng-file-upload.min.js',
-  '/bower_components/angular-daterangepicker/js/angular-daterangepicker.js',
-  'js/dependencies/ng-img-crop.js',
   //Angular App and Controllers
   'js/app.js',
-
-  '/bower_components/d3/d3.min.js',
-  '/bower_components/nvd3/build/nv.d3.min.js',
-  '/bower_components/angular-nvd3/dist/angular-nvd3.min.js',
-  '/bower_components/angular-route/angular-route.min.js',
 
   '/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
   '/bower_components/bootstrap/dist/js/boostrap.min.js',

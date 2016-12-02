@@ -7,7 +7,7 @@
 'use strict';
 
 /** Creation of the app and adding all dependencies for the used modules. */
-var app = angular.module('App', ['ngRoute', 'ui-notification'])
+var app = angular.module('App', ['ngRoute', 'ui-notification','ngDialog'])
 /** Default config for the Notification service to display on-screen notification easily*/
 .config(function(NotificationProvider) {
     NotificationProvider.setOptions({

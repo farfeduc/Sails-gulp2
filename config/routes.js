@@ -34,6 +34,22 @@ module.exports.routes = {
 
   'get /': {
     view: 'home'
+  },
+
+  'get /co-refugee': {
+    view: 'connectionRef'
+  },
+
+    'get /co-Asso': {
+    view: 'connectionAsso'
+  },
+
+      'get /co-Helper': {
+    view: 'connectionHelper'
+  },
+
+  'get /img' : {
+    asset: 'img'
   }
   
   /**
