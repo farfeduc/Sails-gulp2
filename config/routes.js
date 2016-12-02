@@ -36,6 +36,10 @@ module.exports.routes = {
     view: 'home'
   },
 
+  'get /webgl': {
+    view: 'webgl'
+  },
+
   'get /profil': {
     view: 'profil'
   },
