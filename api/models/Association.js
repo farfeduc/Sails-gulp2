@@ -15,6 +15,12 @@ module.exports = {
   		required: true,
   		unique: true
   	},
+  	email:{
+  		type: "String",
+  	},
+  	phone_number:{
+  		type: "String"
+  	},
   	password:{
   		type: "String",
   		required: true
