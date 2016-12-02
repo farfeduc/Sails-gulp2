@@ -36,6 +36,10 @@ module.exports.routes = {
     view: 'home'
   },
 
+  'get /profil': {
+    view: 'profil'
+  },
+
   'get /img' : {
     asset: 'img'
   },

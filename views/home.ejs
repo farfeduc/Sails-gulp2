@@ -16,7 +16,7 @@
         </div>
 </header>
 <% } else { %>
-    plop
+    <!--  Ecrire ici le code de la page d'accueil quand on est connecté.  -->
 
 <% } %>
 
@@ -225,7 +225,7 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <div class="ngdialog-buttons">
-                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectHelper()" value="Connect" />
+                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectDonor()" value="Connect" />
                         </div>
                         
                     </div>
@@ -280,10 +280,10 @@
                     <label>Gender : </label>
                 </div>
                 <div class="col-xs-3 ">
-                    <label><input type="radio" ng-model="helper.gender" value="male" />  male</label>
+                    <label><input type="radio" ng-model="helper.gender" value="m" />  male</label>
                 </div>
                 <div class="col-xs-3 ">
-                    <label><input type="radio" ng-model="helper.gender" value="female" />  female</label>
+                    <label><input type="radio" ng-model="helper.gender" value="f" />  female</label>
                 </div>
             </div>
 
@@ -312,7 +312,7 @@
 
             <div class="row">
                 <div class="col-xs-6">
-                    <input type="submit" class="btn btn-primary btn-xl page-scroll" ng-click="createHelper()" value="Create" />
+                    <input type="submit" class="btn btn-primary btn-xl page-scroll" ng-click="createDonor()" value="Create" />
                 </div>
             </div>
              

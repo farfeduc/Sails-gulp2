@@ -1,0 +1,87 @@
+<%console.log(req.user) %>
+
+<!-- Si on est un donneur : -->
+<%if (req.user.situation === "donor") { %>
+
+	
+
+<% } else { %>
+
+    <!-- Si on est un refugié : -->
+    <%if (req.user.situation === "refugee") { %>
+    <div  class="container" style="margin-top : 10%">
+
+  <form novalidate class="simple-form">
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+            <label>First Name: </label>
+        </div>
+        <div class="col-xs-3 ">
+            <input type="text" ng-model="user.firstName" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+            <label>Last Name: </label>
+        </div>
+        <div class="col-xs-3 ">
+            <input type="text" ng-model="user.lastName" />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+            <label>Adress</label>
+        </div>
+        <div class="col-xs-3 ">
+            <input type="text" ng-model="user.adress" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+            <label>Gender: </label>
+        </div>
+        <div class="col-xs-1 ">
+            <label><input type="radio" ng-model="user.gender" value="male" />  male</label>
+        </div>
+        <div class="col-xs-3 ">
+            <label><input type="radio" ng-model="user.gender" value="female" />  female</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+            <label>Birth date </label>
+        </div>
+        <div class="col-xs-3 ">
+            <input type="date" ng-model="user.birthDate" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+            <label>Password</label>
+        </div>
+        <div class="col-xs-3 ">
+            <input type="password" ng-model="user.password" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+            <input type="submit" class="btn btn-primary btn-xl page-scroll" ng-click="update(user)" value="Save" />
+        </div>
+    </div>
+  </form>
+</div>
+
+	<% } else { %>
+    <!-- Si on est une association : -->
+
+	<% } %>
+
+<% } %>
