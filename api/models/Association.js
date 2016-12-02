@@ -23,7 +23,15 @@ module.exports = {
   		type: "String",
   		required: true
   	},
-  	ressource:{
+  	lat:{
+  		type: "float",
+  		required: true
+  	},
+  	lon:{
+  		type: "float",
+  		required: true
+  	},
+  	ressources:{
   		type: "array"  		
   	},
     toJSON: function() {

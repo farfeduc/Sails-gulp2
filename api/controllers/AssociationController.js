@@ -8,40 +8,14 @@
 var http = require('http');
 var escape = require('escape-html');
 var async = require('async');
+var _ = require('lodash');
 
 module.exports = {
 	getassocs: function (req,res,next) {
-		if (!req.body.adress || req.body.adress=="" || req.body.adress==null) return res.send({error: "no adress"});
+		if (!req.body.lat || req.body.lat=="" || req.body.lat==null) return res.send({error: "no lat"});
+		if (!req.body.lon || req.body.lon=="" || req.body.lon==null) return res.send({error: "no lon"});
+		if (!req.body.action || req.body.action=="" || req.body.action==null) return res.send({error: "no action"});
 		
-		function getdata(callback,adress) {
-			var escadress=escape(adress).replace(/\s/g, "+");
-			http.get({
-		        host: 'nominatim.openstreetmap.org',
-		        path: '/?format=json&limit=1&addressdetails=1&q='+escadress
-		    }, function(response) {
-		        // Continuously update stream with data
-		        var body = '';
-		        response.on('data', function(d) {
-		            body += d;
-		        });
-		        response.on('end', function() {
-
-		            // Data reception is done, do whatever with it!
-		            var parsed = JSON.parse(body)[0];
-		            if (parsed && parsed.lat && parsed.lon){
-			            callback({
-			                lat: parsed.lat,
-			                lon: parsed.lon
-			            });
-		            }
-		            else{
-		            	callback({
-			                error:"no data"
-			            });
-		            }
-		        });
-		    });
-		};
 
 		function calculateDistance(lat1, long1, lat2, long2)
 		{    
@@ -74,30 +48,25 @@ module.exports = {
 	      return (Math.sqrt( (x*x) + (y*y) + (z*z) )/1000);  
 		};
 
-		getdata(function(obj){
-			if (obj.error) return res.send({error:"wrong adress"});
-			Association.find().exec(function(err,result){
-				if(err) return res.send(err);
-				var restmp=[];
-				async.forEach(result,function(association, callback){
-				    getdata(function(tmp){
-					 	if (!tmp.error){	
-						  	var km = calculateDistance(obj.lat,obj.lon,tmp.lat,tmp.lon);
-						  	restmp.push({name:association.name,dist:km});
-					 	}
-					 	callback(); 
-				  	},association.adress);
-				}, function(err){
-				 if(err){throw err;}
-				 console.log(restmp);
-				restmp.sort(function(a, b) {
-				    return parseFloat(a.km) - parseFloat(b.km);
-				});
-
-				res.send({data:restmp});
-				});
+		Association.find().exec(function(err,result){
+			console.log(result);
+			if(err) return res.send(err);
+			var restmp=[];
+			async.forEach(result,function(association, callback){
+				if( _.find(association.ressources, {action:req.body.action}) && _.find(association.ressources, {action:req.body.action}).status){	
+			  		var km = calculateDistance(req.body.lat,req.body.lon,association.lat,association.lon);
+			  		restmp.push({name:association.name,dist:km});
+				}
+			 	callback(); 
+			}, function(err){
+			 if(err){throw err;}
+			restmp.sort(function(a, b) {
+			    return parseFloat(a.km) - parseFloat(b.km);
 			});
-		},req.body.adress);
+
+			res.send({data:restmp});
+			});
+		});
 	}
 };
 
