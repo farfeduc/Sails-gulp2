@@ -56,15 +56,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                <%if (req.user) { %>
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a class="page-scroll" href="/logout">Logout</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#features">Features</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/connection">Connection</a>
-                    </li>
+                <% } %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -134,8 +130,6 @@
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="/js/AppCtrl.js"></script>
     <script src="/js/AppCtrl2.js"></script>
-    <script src="/js/ConnectionHelpController.js"></script>
-    <script src="/js/ConnectionRefController.js"></script>
     <script src="/js/HomeCtrl.js"></script>
     <script src="/js/InsideDialogCtrl.js"></script>
     <script src="/js/jquery.js"></script>

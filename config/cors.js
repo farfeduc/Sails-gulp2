@@ -45,7 +45,7 @@ module.exports.cors = {
   * "*" to allow all domains CORS access.                                    
   *                                                                          
   */
-  /// origin: '*',
+   origin: '*'
 
   /**
   *                                                                          

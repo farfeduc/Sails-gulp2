@@ -4,12 +4,12 @@
             <div class ="row">
               <div class="col-xs-6">
                 <div class="header-content-inner">
-                  <a href="" ng-click="openRefugeeDialog()" class="btn btn-primary">Refugee Dialog</a>
+                  <a href="" ng-click="openRefugeeDialog()" class="btn btn-primary">I'm a refugee</a>
                 </div>
               </div>
               <div class="col-xs-6">
                 <div class="header-content-inner">
-                    <a href="" ng-click="openDefault()" class="btn btn-primary">Je suis bénévole</a>
+                    <a href="" ng-click="openDefault()" class="btn btn-primary">I'm a volunteer</a>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <div class="ngdialog-buttons">
-                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectRefugee(user)" value="Connect" />
+                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectRefugee()" value="Connect" />
                         </div>
                         
                     </div>
@@ -109,7 +109,7 @@
                         <label>First Name : </label>
                     </div>
                     <div class="col-xs-6 ">
-                        <input type="text" ng-model="user.firstName" />
+                        <input type="text" ng-model="user.first_name" />
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@
                         <label>Last Name : </label>
                     </div>
                     <div class="col-xs-6 ">
-                        <input type="text" ng-model="user.lastName" />
+                        <input type="text" ng-model="user.last_name" />
                     </div>
                 </div>
 
@@ -127,7 +127,7 @@
                         <label>Email : </label>
                     </div>
                     <div class="col-xs-6 ">
-                        <input type="email" ng-model="user.email" />
+                        <input type="text" ng-model="user.email" />
                     </div>
                 </div>
 
@@ -137,10 +137,10 @@
                         <label>Gender : </label>
                     </div>
                     <div class="col-xs-3 ">
-                        <label><input type="radio" ng-model="user.gender" value="male" />  male</label>
+                        <label><input type="radio" ng-model="user.gender" value="m" />  male</label>
                     </div>
                     <div class="col-xs-3 ">
-                        <label><input type="radio" ng-model="user.gender" value="female" />  female</label>
+                        <label><input type="radio" ng-model="user.gender" value="f" />  female</label>
                     </div>
                 </div>
 
@@ -149,7 +149,7 @@
                         <label>Birth date :</label>
                     </div>
                     <div class="col-xs-6 ">
-                        <input type="date" ng-model="user.birthDate" />
+                        <input type="date" ng-model="user.birthdate" />
                     </div>
                 </div>
 
@@ -165,7 +165,7 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="ngdialog-buttons">
-                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="create(user)" value="Create Account" />
+                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="createRefugee()" value="Create Account" />
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                         <label>Email : </label>
                     </div>
                     <div class="col-xs-6 ">
-                        <input type="email" ng-model="user.email" />
+                        <input type="text" ng-model="helper.email" />
                     </div>
                 </div>
 
@@ -211,7 +211,7 @@
                         <label>Password :</label>
                     </div>
                     <div class="col-xs-6 ">
-                        <input type="password" ng-model="user.password" />
+                        <input type="password" ng-model="helper.password" />
                     </div>
                 </div>
 
@@ -225,7 +225,7 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <div class="ngdialog-buttons">
-                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectHelper(user)" value="Connect" />
+                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectHelper()" value="Connect" />
                         </div>
                         
                     </div>
@@ -253,7 +253,7 @@
                     <label> First Name : </label>
                 </div>
                 <div class="col-xs-6 ">
-                    <input type="text" ng-model="helper.firstName" />
+                    <input type="text" ng-model="helper.first_name" />
                 </div>
             </div>
 
@@ -262,7 +262,7 @@
                     <label> Last Name : </label>
                 </div>
                 <div class="col-xs-6 ">
-                    <input type="text" ng-model="helper.lastName" />
+                    <input type="text" ng-model="helper.last_name" />
                 </div>
             </div>
 
@@ -271,7 +271,28 @@
                     <label>Email : </label>
                 </div>
                 <div class="col-xs-6 ">
-                    <input type="email" ng-model="helper.email" />
+                    <input type="text" ng-model="helper.email" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>Gender : </label>
+                </div>
+                <div class="col-xs-3 ">
+                    <label><input type="radio" ng-model="helper.gender" value="male" />  male</label>
+                </div>
+                <div class="col-xs-3 ">
+                    <label><input type="radio" ng-model="helper.gender" value="female" />  female</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>Birth date :</label>
+                </div>
+                <div class="col-xs-6 ">
+                    <input type="date" ng-model="helper.birthdate" />
                 </div>
             </div>
 
@@ -291,7 +312,7 @@
 
             <div class="row">
                 <div class="col-xs-6">
-                    <input type="submit" class="btn btn-primary btn-xl page-scroll" ng-click="update(user)" value="Create" />
+                    <input type="submit" class="btn btn-primary btn-xl page-scroll" ng-click="createHelper()" value="Create" />
                 </div>
             </div>
              
@@ -352,7 +373,7 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <div class="ngdialog-buttons">
-                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectAsso(asso)" value="Log in" />
+                            <input type="submit" class="ngdialog-button ngdialog-button-primary" ng-click="connectAsso()" value="Log in" />
                         </div>
                         
                     </div>
@@ -395,10 +416,10 @@
 
             <div class="row">
                 <div class="col-xs-6">
-                    <label>Adress : </label>
+                    <label>Address : </label>
                 </div>
                 <div class="col-xs-6 ">
-                    <input type="text" ng-model="asso.adress" />
+                    <input type="text" ng-model="asso.address" />
                 </div>
             </div>
 
@@ -417,7 +438,7 @@
 
             <div class="row">
                 <div class="col-xs-6">
-                    <input type="submit" class="btn btn-primary btn-xl page-scroll" ng-click="update(asso)" value="Create" />
+                    <input type="submit" class="btn btn-primary btn-xl page-scroll" ng-click="createAsso()" value="Create" />
                 </div>
             </div>
              

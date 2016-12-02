@@ -31,12 +31,16 @@ module.exports = {
   		type: "String",
   		required: true
   	},
+    birthdate:{
+      type: "Date",
+      required: true
+    },
   	gender:{
   		type: "String",
   		enum: ['m', 'f'],
   		required: true
   	},
-  	adress:{
+  	address:{
   		type: "String",
   	},
   	situation:{

@@ -22,6 +22,8 @@
                     controller: 'InsideDialogCtrl',
                     className: 'ngdialog-theme-default'
                 });
-            }        
+            }   
+
+      
 
 }]);
