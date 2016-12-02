@@ -36,20 +36,34 @@ module.exports.routes = {
     view: 'home'
   },
 
-  'get /co-refugee': {
-    view: 'connectionRef'
-  },
-
-    'get /co-Asso': {
-    view: 'connectionAsso'
-  },
-
-      'get /co-Helper': {
-    view: 'connectionHelper'
-  },
-
   'get /img' : {
     asset: 'img'
+  },
+
+  'POST /auth-facebook':{
+  	controller: 'auth',
+  	action:'login_facebook'
+  },
+
+  'POST /auth-local':{
+  	controller: 'auth',
+  	action: 'login'
+  },
+
+  'POST /auth-local-assoc':{
+  	controller: 'auth',
+  	action: 'login_association'
+  },
+
+  'GET /logout':{
+  	controller: 'auth',
+  	action: 'logout',
+  	policy: 'IsAuthenticated'
+  },
+
+  '/facebook-callback':{
+  	controller: 'auth',
+  	action: 'facebook_callback'
   }
   
   /**
