@@ -1,5 +1,7 @@
-version: v1.5.0
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.0
 ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:minimatch:20160620':
     - gulp-linker > glob > minimatch:
@@ -19,9 +21,22 @@ patch:
         patched: '2016-11-30T07:59:37.545Z'
     - sails > express > connect > serve-index > accepts > negotiator:
         patched: '2016-11-30T07:59:37.545Z'
+    - sails > @sailshq/express > @sailshq/connect > compression > accepts > negotiator:
+        patched: '2017-03-29T11:26:17.106Z'
+    - sails > @sailshq/express > @sailshq/connect > serve-index > accepts > negotiator:
+        patched: '2017-03-29T11:26:17.106Z'
   'npm:uglify-js:20151024':
     - gulp-jade > jade > transformers > uglify-js:
         patched: '2016-11-30T07:59:37.545Z'
   'npm:ws:20160624':
     - sails > sails-hook-sockets > socket.io-client > engine.io-client > ws:
         patched: '2016-11-30T07:59:37.545Z'
+  'npm:ejs:20161128':
+    - sails > ejs:
+        patched: '2017-03-29T11:26:17.106Z'
+  'npm:marked:20170112':
+    - gulp-notify > node-notifier > cli-usage > marked:
+        patched: '2017-03-29T11:26:17.106Z'
+  'npm:uglify-js:20150824':
+    - gulp-jade > jade > transformers > uglify-js:
+        patched: '2017-03-29T11:26:17.106Z'
