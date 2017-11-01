@@ -48,7 +48,7 @@
     "sails-disk": "~0.10.9",
     "sails-hook-email": "^0.12.1",
     "sails-mongo": "^0.12.0",
-    "snyk": "^1.30.1",
+    "snyk": "^1.47.0",
     "thirty-two": "^1.0.1",
     "zone.js": "~0.6.12"
   },
